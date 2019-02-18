@@ -1,0 +1,8 @@
+---
+  - name: Undeploy  Webserver
+    hosts: localhost
+    remote_user: rey
+
+    tasks:
+      - name: stop apache2 server
+        raw: sudo service apache2 stop

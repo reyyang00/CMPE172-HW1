@@ -1,0 +1,17 @@
+
+---
+- name: Hello-world-Demo
+  hosts: localhost
+  connection: localhost
+  become: true
+  vars:
+        http_port: 80
+   
+  tasks:
+  - action: ping
+  - name: Install apache2
+    raw: sudo apt-get -y install apache2
+  - name: Start Apache Server
+    raw: sudo service apache2 restart
+  - name: Display Hello World Message
+    raw: echo "<h1>Hello World--Rui Yang, SE172 hw#1</h1>" > /var/www/html/index.html
